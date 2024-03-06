@@ -1,0 +1,558 @@
+			ASP.NET Core Interview Questions & Answers for Beginners
+			========================================================
+1. Explain ASP.NET Core
+
+-ASP.NET Core is a modern open-source web framework for building cross-platform(Cross-platform refers to the ability of software or technology to run on multiple operating systems or platforms) web apps and APIs.
+-It's lightweight, modular, and runs on Windows, Linux, and macOS.
+-it provides a way to build both web applications (using the MVC pattern) and APIs (Web API) within the same framework. 
+-It's developed by Microsoft
+
+
+     ASP.NET Core
+           |
+           |
+           v
++-----------------------------+
+| Modern Open-Source          |
+| Web Framework               |
+|                             |
+| for Building                |
+| Cross-Platform              |
+| Web Apps and APIs           |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Lightweight                 |
+| Modular                     |
+| Cross-Platform              |
+|                             |
+| Runs on Windows, Linux,     |
+| and macOS                   |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Combines MVC Pattern for    |
+| Web Applications            |
+| and Web API for APIs        |
+| within the Same Framework  |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Developed by Microsoft      |
++-----------------------------+
+
+
+
+2. Explain the key differences between ASP.NET Core and ASP.NET.
+
+-----------------------------------------------------------------------------
+Feature               | ASP.NET Core                      | ASP.NET
+---------------------------------------------------------------------------
+Platform              | Cross-platform (Windows, Linux,   | Windows only
+                      | macOS)                            |
+---------------------------------------------------------------------------
+Framework Size        | Modular and lightweight           | Larger and more complex
+---------------------------------------------------------------------------
+Performance           | Generally faster and more         | Potentially slower due to
+                      | efficient                         | larger size
+---------------------------------------------------------------------------
+Architecture          | Built on .NET Core runtime        | Built on full .NET Framework
+---------------------------------------------------------------------------
+Model-View-Controller | Integrated with Web API in a      | Separate MVC framework and
+(MVC)                 | unified framework                 | Web API
+---------------------------------------------------------------------------
+Configuration         | More flexible and streamlined     | Complex and XML-based
+                                                            configuration
+---------------------------------------------------------------------------
+Open Source           | Yes                               | Primarily closed-source,
+                                                            with some open-source
+                                                            components
+---------------------------------------------------------------------------
+Microsoft Support     | Fully supported by Microsoft      | Limited support for older
+                                                            ASP.NET versions
+---------------------------------------------------------------------------
+Suitable for          | Modern web apps, cloud deployments| Legacy applications,
+                      | microservices                     | Windows-specific deployments
+
+4. Explain Dependency Injection.
+
+-Dependency injection is a design pattern
+-it allows us to inject dependencies (objects) into your code at runtime.
+-In ASP.NET Core, the built-in DI container manages the creation and lifetime of these dependencies.
+
+   Dependency Injection
+           |
+           |
+           v
++-----------------------------+
+| Design Pattern              |
+|                             |
+| Allows Injection of        |
+| Dependencies into Code     |
+| at Runtime                 |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Inject Dependencies         |
+| (Objects) into Code        |
+|                             |
+| Reduces Coupling           |
+| Improves Testability       |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| ASP.NET Core has            |
+| Built-in DI Container that  |
+| Manages Creation and        |
+| Lifetime of Dependencies    |
++-----------------------------+
+
+
+5. What are the benefits of ASP.NET Core?
+
+i)Cross-platform: Develop for Windows, macOS, Linux, & various architectures.
+
+ii)Lightweight & performant: fast execution & minimal resource footprint.
+
+iii)Unified APIs: Build web UIs & APIs with a consistent, flexible approach.
+
+iv)Modular & testable: Easy to customize & test, promoting code maintainability.
+
+v)Cloud-friendly: Integrates seamlessly with cloud platforms like Azure.
+
+vi)fast: Optimized for modern web frameworks & APIs.
+
+vii)Open-source: Access to vast resources & ongoing development.
+
+
+     Benefits of ASP.NET Core
+           |
+           |
+           v
++-----------------------------+
+| Cross-platform              |
+|                             |
+| Develop for Windows, macOS, |
+| Linux, & various            |
+| architectures               |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Lightweight & Performant    |
+|                             |
+| Fast execution & minimal    |
+| resource footprint          |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Unified APIs                |
+|                             |
+| Build web UIs & APIs with   |
+| a consistent, flexible      |
+| approach                    |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Modular & Testable          |
+|                             |
+| Easy to customize & test,   |
+| promoting code              |
+|  maintainability            |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Cloud-friendly              |
+|                             |
+| Integrates seamlessly with  |
+| cloud platforms like Azure  |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Fast                        |
+|                             |
+| Optimized for modern web    |
+| frameworks & APIs           |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Open-source                 |
+|                             |
+| Access to vast resources &  |
+| ongoing development         |
++-----------------------------+
+
+
+6. Explain the request processing pipeline in ASP.NET Core.
+
+-It is a series of modular components called "middleware" that handle an incoming HTTP request in sequence. Each middleware performs a specific task before passing the request to the next one, like authentication, logging, or routing.
+
+-In simple terms, the request processing pipeline is like a conveyor belt where each station (middleware) performs a specific task on an HTTP request as it moves along. This helps handle various aspects of the request, such as authentication, logging, and routing, before sending a response back to the client.
+
+ Request Processing Pipeline
+           |
+           |
+           v
++-----------------------------+
+| Series of Modular Components|
+|                             |
+| Called "Middleware"         |
+|                             |
+| Handle Incoming HTTP        |
+| Request in Sequence         |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Each Middleware Performs    |
+| a Specific Task             |
+|                             |
+| Authentication, Logging,    |
+| Routing, etc.               |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Middleware Passes Request   |
+| to the Next One             |
+|                             |
+| Sequential Processing       |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Request Processing Pipeline|
+| is Like a Conveyor Belt    |
+|                            |
+| Each Middleware Station    |
+| Performs Specific Task     |
+| Before Sending Response    |
+| Back to the Client         |
++-----------------------------+
+
+
+
+7.Differentiate between app.Run and app.Use in middleware configuration.
+
+Feature              | app.Run                                | app.Use
+------------------------------------------------------------------------------------------------------
+Purpose              | Adds a terminal middleware delegate    | Adds a non-terminal middleware delegate
+                     | to the pipeline.                       | to the pipeline.
+------------------------------------------------------------------------------
+Execution            | Processes the request and ends the     | Processes the request and passes it
+                     | pipeline.                              | to the next middleware in the pipeline.
+------------------------------------------------------------------------------
+Use Case             | Suitable for simple applications with  | Suitable for complex applications
+                     | no further processing needed.          | requiring multiple processing steps.
+------------------------------------------------------------------------------
+Example              | app.Run(async context => await         | app.UseAuthentication();
+                     | context.Response.WriteAsync("Hello     | app.UseAuthorization();
+                     | World!"));                             |
+------------------------------------------------------------------------------
+Result               | Sends the response directly to the     | Modifies the request context and
+                     | client.                                | passes it to the next middleware.
+------------------------------------------------------------------------------
+Flexibility          | Limited, only handles the request      | More flexible, and allows chaining
+                     | directly.                              | multiple middleware components.
+------------------------------------------------------------------------------
+Testability          | Can be challenging to test due to its  | Easier to test in isolation as it is
+                     | terminal nature.                       | part of a larger pipeline.
+
+8. What is a Request delegate and how is it used?
+
+-In ASP.NET Core, a Request delegate is a function that processes and handles an incoming HTTP request. -It's the core building block of the request processing pipeline, which is essentially a series of middleware components that handle the request one after the other.
+
+     Request Delegate
+           |
+           |
+           v
+    +------------------+
+    |                  |
+    | Function that    |
+    | processes and    |
+    | handles an       |
+    | incoming HTTP    |
+    | request.         |
+    |                  |
+    +------------------+
+           |
+           |
+           v
++-----------------------------+
+| Core Building Block         |
+| of Request Processing      |
+| Pipeline                    |
++-----------------------------+
+           |
+           |
+           v
++-----------------------------+
+| Series of Middleware       |
+| Components                  |
+|                             |
+| Handle the Request         |
+| One after the Other        |
++-----------------------------+
+
+
+10. Explain how Configuration works in ASP.NET Core and reading values from the appsettings.json file.
+
+-In ASP.NET Core, Configuration is like a set of instructions or settings that tell your application how to behave. These settings are stored as key-value pairs, which means there's a name (key) for each setting and a value associated with it. These settings can be stored in different places like files (such as the appsettings.json file) or environment variables.
+
+-To read these settings and make them available to your application, ASP.NET Core uses something called Providers. Providers are like helpers that know how to read settings from different sources. For example, there's a provider for reading settings from a JSON file (like appsettings.json) and another one for reading settings from environment variables.
+
+-Once these settings are read, ASP.NET Core combines them into a single view, so your application can access them easily. This is where IConfiguration comes in. IConfiguration is like a toolbox that lets your application fetch settings by their names (keys). For example, if you want to know the value of a setting named "DatabaseConnectionString," you can ask IConfiguration for it, and it will give you the value stored in the appsettings.json file or wherever it's defined.
+
+-Reading Values from appsettings.json:
+	Once the configuration is built, you can access values from appsettings.json using the IConfiguration interface injected in your classes or accessed through the Host.Configuration property.
+You can retrieve values by their key using methods like GetValue<T>("key"), where T is the expected type of the value.
+
+Example:
+public class MyController : Controller
+{
+  private readonly IConfiguration _configuration;
+
+  public MyController(IConfiguration configuration)
+  {
+    _configuration = configuration;
+  }
+
+  public IActionResult Index()
+  {
+    string connectionString = _configuration.GetValue<string>("ConnectionStrings:Default");
+    // Use the connection string to access your database...
+    return View();
+  }
+}
+
+
+
+12. Explain Session and State Management options in ASP.NET Core.
+
+-Session and State Management refers to techniques for storing and maintaining data across multiple user requests.
+-This data can be user-specific (like shopping cart items) or application-wide (like configuration settings).
+-Session state uses cookies to track users, while other options like cache or database can hold global state.
+
+    Session and State Management in ASP.NET Core
+                |
+                |
+                v
+  +----------------------------------+
+  |                                  |
+  | Session                          |
+  |                                  |
+  | Stores User Data Temporarily     |
+  | Between HTTP Requests            |
+  |                                  |
+  +----------------------------------+
+                |
+                |
+                v
+  +----------------------------------+
+  |                                  |
+  | Options for State Management     |
+  |                                  |
+  | In-Memory                        |
+  | Distributed                      |
+  | Client-Side                      |
+  |                                  |
+  +----------------------------------+
+                |
+                |
+                v
+  +----------------------------------+
+  |                                  |
+  | In-Memory                        |
+  |                                  |
+  | Stores Session Data in Memory    |
+  | of the Web Server                |
+  |                                  |
+  +----------------------------------+
+                |
+                |
+                v
+  +----------------------------------+
+  |                                  |
+  | Distributed                      |
+  |                                  |
+  | Stores Session Data Across       |
+  | Multiple Servers                 |
+  |                                  |
+  +----------------------------------+
+                |
+                |
+                v
+  +----------------------------------+
+  |                                  |
+  | Client-Side                      |
+  |                                  |
+  | Stores Session Data on Client's  |
+  | Browser                          |
+  |                                  |
+  +----------------------------------+
+
+
+13. Can ASP.NET Core applications be run in Docker containers? Explain.
+
+Docker containers offer a perfect match for the agility and flexibility of ASP.NET Core applications. It's a powerful combination for building and deploying modern web applications. Here's why:
+
+Lightweight and portable
+Scalability and isolation
+Microservices architecture
+Simplified deployment
+
+14. Describe Model Binding in ASP.NET Core.
+
+-In ASP.NET Core, model binding is a powerful feature that bridges the gap between user input and your application logic.
+-It automatically maps data from an HTTP request (like forms, query strings, or JSON bodies) to C# model objects used in your controller actions.
+-This simplifies development by removing the need for manual data parsing and validation.
+
+        Model Binding in ASP.NET Core
+                   |
+                   |
+                   v
+  +------------------------------------+
+  |                                    |
+  | Powerful Feature                   |
+  |                                    |
+  | Bridges Gap Between User Input    |
+  | and Application Logic             |
+  |                                    |
+  +------------------------------------+
+                   |
+                   |
+                   v
+  +------------------------------------+
+  |                                    |
+  | Automatically Maps Data            |
+  | from HTTP Request                  |
+  |                                    |
+  | Forms, Query Strings, JSON Bodies |
+  |                                    |
+  +------------------------------------+
+                   |
+                   |
+                   v
+  +------------------------------------+
+  |                                    |
+  | Maps Data to C# Model Objects      |
+  | Used in Controller Actions         |
+  |                                    |
+  | Simplifies Development             |
+  |                                    |
+  +------------------------------------+
+                   |
+                   |
+                   v
+  +------------------------------------+
+  |                                    |
+  | Removes Need for Manual Data       |
+  | Parsing and Validation             |
+  |                                    |
+  | Increases Productivity             |
+  |                                    |
+  +------------------------------------+
+
+
+
+*****
+16. Explain the ASP.NET Core MVC architecture.
+
+-ASP.NET Core MVC architecture is based on the Model-View-Controller (MVC) pattern, cleanly separating concerns in your web application.
+-Models represent data, Views handle presentation, and Controllers manage the interaction between them.
+-Models are the building blocks, Views are the blueprints, and Controllers are the construction crew, working together to create a beautiful and functional web experience.
+-This separation improves code maintainability, testability, and scalability, making your applications well-organized and flexible.
+
+-MVC Design Pattern: ASP.NET Core MVC follows the Model-View-Controller (MVC) design pattern. Here's what each part does:
+
+1)Model: This represents the data of the application. It's like the storage room where you keep all the important information.
+2)View: This represents what the user sees and interacts with. It's like the front door of a house that lets you see inside.
+3)Controller: This handles user input and makes decisions about what to do with it. It's like the manager who takes your requests and tells the others what to do.
+
+17. Explain the components (Model, View, Controller) of ASP.NET Core MVC.
+The components of ASP.NET Core MVC are as follows:
+
+1)Models: Represent the data and logic of your application. They define the entities and their relationships, encapsulate business rules, and handle data access. Model classes typically interact with databases or other data sources.
+
+2)Views: Responsible for presenting the user interface. They use technologies like HTML, CSS, and Razor to render the data received from the models in a visually appealing way. Views do not know the application logic and only focus on presentation.
+
+3)Controllers: Act as the entry point for user interaction and orchestrate the flow of the application. They receive user requests, process them using the models, and ultimately choose which view to render. Controllers interact with both models and views, but never directly with the user interface.
+
+   Components of ASP.NET Core MVC
+                 |
+                 |
+                 v
++----------------------------------+
+|              Model               |
+|                                  |
+| Represent Data and Logic         |
+| Define Entities and Relationships|
+| Encapsulate Business Rules       |
+| Handle Data Access               |
++----------------------------------+
+                 |
+                 |
+                 v
++----------------------------------+
+|               View               |
+|                                  |
+| Present User Interface           |
+| Render Data from Models          |
+| Use HTML, CSS, Razor             |
+|                                  |
++----------------------------------+
+                 |
+                 |
+                 v
++----------------------------------+
+|           Controller             |
+|                                  |
+| Entry Point for User Interaction |
+| Orchestrates Application Flow    |
+| Receives User Requests           |
+| Interacts with Models and Views  |
++----------------------------------+
+
+
+18. Describe the concept of view models in ASP.NET Core MVC development.
+
+In ASP.NET Core MVC development, ViewModels play a crucial role in separating data and presentation concerns.
+They act as a bridge between your domain models (entities representing business data) and the views (user interface).
+ViewModels are custom classes specifically designed to represent the data required by a particular view.
+Unlike domain models, they are not directly tied to the database or business logic.
+They are lightweight and hold only the data relevant to that specific view, often combining information from multiple domain models or adding formatting or calculations for display purposes.
+
+19. Explain how routing works in ASP.NET Core MVC applications.
+
+-routing acts like a map, directing incoming URLs to the right controller action.
+-It uses two key ingredients: route templates that define possible URL patterns and middleware that scan requests against those patterns.
+-When a match is found, the corresponding controller action is invoked, handling the request and generating a response.
+
+20. Explain the concept of Attribute-based routing in ASP.NET Core MVC.
+
+Attribute-based routing is a powerful feature in ASP.NET Core MVC that allows you to define the routes for your web application directly on your controller classes and action methods using Route attributes. This approach offers several advantages over convention-based routing, providing more control and flexibility over the URIs your application exposes.
+
